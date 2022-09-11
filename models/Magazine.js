@@ -10,12 +10,12 @@ const MagazineSchema = new mongoose.Schema({
     required: [true, 'Please add a isbn'],
   },
   authors: {
-    type: String,
-    required: [true, 'Please add an email'],
+    type: [String],
+    required: [true, 'Please add an authors'],
   },
-  createdAt: {
-    type: Date,
-    default: Date.now,
+  publishedAt: {
+    type: String,
+    required: [true],
   },
 });
 

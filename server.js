@@ -4,11 +4,14 @@ const routes = require('./routes.js');
 const dotenv = require('dotenv');
 const connectDB = require('./db');
 
+app.use(express.json());
 app.use('/api', routes);
-// app.use(express.json());
 
 dotenv.config({ path: './config.env' });
 
 connectDB();
 
-app.listen(5000, console.log(`Server running on port 5000`));
+app.listen(
+  process.env.PORT,
+  console.log(`Server running on port ${process.env.PORT}`)
+);
